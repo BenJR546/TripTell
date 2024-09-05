@@ -14,3 +14,18 @@ const sequelize = process.env.DB_URL
     );
 
 module.exports = sequelize;
+
+const { Pool } = require("pg");
+const dbConfig = require("./config/connection");
+
+const pool = new Pool(dbConfig);
+
+pool.query("CREATE DATABASE travel_db", (err, res) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log("Database created successfully");
+  }
+});
+
+pool.end();
