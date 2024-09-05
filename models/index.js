@@ -1,13 +1,22 @@
+//const Sequelize = require('sequelize');
+//const sequelize = require('../config/connection');
+
+// Import all models
 const User = require('./User');
-const Gallery = require('./Gallery');
-const Painting = require('./Painting');
+const Blog = require('./Blog');
 
-Gallery.hasMany(Painting, {
-  foreignKey: 'gallery_id',
+// Define model relationships
+User.hasMany(Blog, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE', // If a user is deleted, their blog posts will also be deleted
 });
 
-Painting.belongsTo(Gallery, {
-  foreignKey: 'gallery_id',
+Blog.belongsTo(User, {
+  foreignKey: 'user_id',
 });
 
-module.exports = { User, Gallery, Painting };
+// Export the models
+module.exports = {
+  User,
+  Blog,
+};
