@@ -1,0 +1,43 @@
+[
+    {
+      "title": "Exploring the Mountains",
+      "content": "The mountains are a great place to relax and find peace. This blog post covers the best hiking trails in the Rockies.",
+      "image_url": "https://example.com/images/mountains.jpg",
+      "user_id": 1,
+      "createdAt": "2024-09-01T00:00:00.000Z",
+      "updatedAt": "2024-09-01T00:00:00.000Z"
+    },
+    {
+      "title": "A Day at the Beach",
+      "content": "Sun, sand, and sea. This blog post shares tips on making the most out of a beach day.",
+      "image_url": "https://example.com/images/beach.jpg",
+      "user_id": 2,
+      "createdAt": "2024-09-02T00:00:00.000Z",
+      "updatedAt": "2024-09-02T00:00:00.000Z"
+    },
+    {
+      "title": "City Adventures",
+      "content": "Exploring the hidden gems in the city's heart. A guide to discovering the best local spots.",
+      "image_url": "https://example.com/images/city.jpg",
+      "user_id": 3,
+      "createdAt": "2024-09-03T00:00:00.000Z",
+      "updatedAt": "2024-09-03T00:00:00.000Z"
+    },
+    {
+      "title": "The Best Camping Sites",
+      "content": "Looking for the perfect camping spot? This post lists some of the best sites for an outdoor adventure.",
+      "image_url": "https://example.com/images/camping.jpg",
+      "user_id": 4,
+      "createdAt": "2024-09-04T00:00:00.000Z",
+      "updatedAt": "2024-09-04T00:00:00.000Z"
+    },
+    {
+      "title": "Foodie Travels",
+      "content": "Discovering the best places to eat while traveling. A guide for food lovers.",
+      "image_url": "https://example.com/images/food.jpg",
+      "user_id": 5,
+      "createdAt": "2024-09-05T00:00:00.000Z",
+      "updatedAt": "2024-09-05T00:00:00.000Z"
+    }
+  ]
+  

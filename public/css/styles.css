@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .landing-page {
+    background-image: url('public/css/images/wallpaper.jpg');
+    background-size: cover;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  

@@ -1,9 +1,15 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 
-const apiRoutes = require('./api');
-const homeRoutes = require('./home-routes.js');
+// Import route handlers
+const userRoutes = require('./api/userRoutes');  // Adjust the path to your userRoutes file
+const blogRoutes = require('./api/blogRoutes');  // Adjust the path to your blogRoutes file
+const homeRoutes = require('./homeRoutes');       // Adjust the path to your homeRoutes file
 
-router.use('/', homeRoutes);
-router.use('/api', apiRoutes);
+// Use the routes
+router.use('/api/users', userRoutes);  // Prefix for user routes
+router.use('/api/blog', blogRoutes);  // Prefix for blog routes
+router.use('/', homeRoutes);           // Home page and login/signup routes
 
 module.exports = router;
+
