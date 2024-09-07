@@ -1,24 +1,24 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { User, Blog } = require('../models');
-const withAuth = require('../utils/auth'); // Middleware for protected routes
+const { User, Blog } = require("../models");
+const withAuth = require("../utils/auth"); // Middleware for protected routes
 
 // GET home page
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Fetch blog posts from the database
     const blogData = await Blog.findAll({
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ["username"],
         },
       ],
     });
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    res.render('home', {
+    res.render("home", {
       blogs,
       loggedIn: req.session.loggedIn,
     });
@@ -28,43 +28,43 @@ router.get('/', async (req, res) => {
 });
 
 // GET login page
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
 
 // GET signup page
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('signup');
+  res.render("signup");
 });
 
 // GET single blog post
-router.get('/blog/:id', async (req, res) => {
+router.get("/blog/:id", withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ["username"],
         },
       ],
     });
 
     if (!blogData) {
-      res.status(404).json({ message: 'No blog found with this id!' });
+      res.status(404).json({ message: "No blog found with this id!" });
       return;
     }
 
     const blog = blogData.get({ plain: true });
 
-    res.render('single-blog', {
+    res.render("single-blog", {
       blog,
       loggedIn: req.session.loggedIn,
     });
