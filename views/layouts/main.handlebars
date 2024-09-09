@@ -1,15 +1,60 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanderlust Travel Blog</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/styles.css">
-</head>
-<body>
-    {{{body}}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="public/js/scripts.js"></script>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triptell</title>
+    <link rel="stylesheet" type="text/css" href="/css/jass.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  </head>
+
+  <body class="background-image">
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>TripTell</h1>
+        </div>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          {{#if loggedIn}}
+            <button id="logout" class="btn-no-style">Logout</button>
+          {{else}}
+            <a href="/login">Login</a>
+          {{/if}}
+        </div>
+      </nav>
+    </header>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>EXPLORE. DISCOVER. CONNECT.</h1>
+        <p>This is a travel blog to discover beautiful destinations, new experiences, and hidden places around the world.</p>
+        <button>SIGN UP HERE</button>
+      </div>  
+    </section>
+
+    <section class="content">
+      <h2>Featured Destinations</h2>
+      <div class="image-grid">
+        <img src="/images/FRANCE.jpg" alt="Destination 1">
+        <img src="/images/ITALY.avif" alt="Destination 2">
+        <img src="/images/THAILAND.webp" alt="Destination 3">
+        <img src="/images/SWISS.jpg" alt="Destination 4">
+        <img src="/images/japan.avif" alt="Destination 5">
+        <img src="/images/bahamas.jpg" alt="Destination 6">
+        <img src="/images/iceland.jpg" alt="Destination 7">
+        <img src="/images/greece.webp" alt="Destination 8">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 TripTell. All rights reserved.</p>
+  </footer>
 </body>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+
 </html>
