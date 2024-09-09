@@ -10,10 +10,13 @@ router.post('/signup', async (req, res) => {
       req.session.loggedIn = true;
       res.status(200).json(newUser);
     });
+
+    
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 router.post('/login', async (req, res) => {
     try {
@@ -43,5 +46,14 @@ router.post('/login', async (req, res) => {
       res.status(500).json(err);
     }
   });
+  // userroute.js or a similar route file
+  router.post('/logout', (req, res) => {
+    req.session.destroy(() => {
+      res.status(204).end(); // 204 No Content
+    });
+  });
+  
+
+
   
 module.exports = router;

@@ -17,19 +17,49 @@
   </header>
 
   <div class="container mt-5">
-    <h2 class="text-center">Login</h2>
-    <form action="/api/users/login" method="POST">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" class="form-control" required>
+    <div class="row justify-content-between">
+      <!-- Login Card -->
+      <div class="login-card">
+        <h2 class="page-title">Login</h2>
+        <form class="form login-form" action="/api/users/login" method="POST">
+          <div class="form-group">
+            <label for="email-login">Email:</label>
+            <input class="form-input" type="text" id="email-login" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password-login">Password:</label>
+            <input class="form-input" type="password" id="password-login" name="password" required />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Login</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" class="form-control" required>
+
+      <!-- Signup Card -->
+      <div class="login-card">
+        <h2 class="page-title">Signup</h2>
+        <form class="form signup-form" action="/api/users/signup" method="POST">
+          <div class="form-group">
+            <label for="username-signup">Username:</label>
+            <input class="form-input" type="text" id="username-signup" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="email-signup">Email:</label>
+            <input class="form-input" type="text" id="email-signup" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password-signup">Password:</label>
+            <input class="form-input" type="password" id="password-signup" name="password" required />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Signup</button>
+          </div>
+        </form>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Login</button>
-      
-    </form>
+    </div>
   </div>
+
+  <script src="/js/login.js"></script>
 </body>
 </html>
