@@ -1,12 +1,19 @@
-const express = require('express');
-const router = express.Router();
-const { User, Blog } = require('../models');
-const withAuth = require('../utils/auth'); // Middleware for protected routes
+// homeroute.js
 
-// GET home page
-router.get('/', async (req, res) => {
+const router = require('express').Router();
+const { Blog, User } = require('../models');
+
+// Route to render the home page
+router.get('/', (req, res) => {
+  res.render('home', {
+    loggedIn: req.session.loggedIn,
+  });
+});
+
+// Route to render the blog page
+// homeroute.js or similar
+router.get('/blog', async (req, res) => {
   try {
-    // Fetch blog posts from the database
     const blogData = await Blog.findAll({
       include: [
         {
@@ -18,16 +25,17 @@ router.get('/', async (req, res) => {
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    res.render('home', {
+    res.render('blog', {
       blogs,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
 
-// GET login page
+// Route to render the login page
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -36,41 +44,13 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// GET signup page
+// Route to render the signup page
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
   res.render('signup');
-});
-
-// GET single blog post
-router.get('/blog/:id', async (req, res) => {
-  try {
-    const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
-    });
-
-    if (!blogData) {
-      res.status(404).json({ message: 'No blog found with this id!' });
-      return;
-    }
-
-    const blog = blogData.get({ plain: true });
-
-    res.render('single-blog', {
-      blog,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
 });
 
 module.exports = router;
