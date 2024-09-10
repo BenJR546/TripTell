@@ -1,31 +1,31 @@
 // homeroute.js
 
-const router = require('express').Router();
-const { Blog, User } = require('../models');
+const router = require("express").Router();
+const { Blog, User } = require("../models");
 
 // Route to render the home page
-router.get('/', (req, res) => {
-  res.render('home', {
+router.get("/", (req, res) => {
+  res.render("home", {
     loggedIn: req.session.loggedIn,
   });
 });
 
 // Route to render the blog page
 // homeroute.js or similar
-router.get('/blog', async (req, res) => {
+router.get("/blog", async (req, res) => {
   try {
     const blogData = await Blog.findAll({
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ["username"],
         },
       ],
     });
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    res.render('blog', {
+    res.render("blog", {
       blogs,
       loggedIn: req.session.loggedIn,
     });
@@ -36,21 +36,21 @@ router.get('/blog', async (req, res) => {
 });
 
 // Route to render the login page
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
 
 // Route to render the signup page
-router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('signup');
+router.get("/signup", (req, res) => {
+  // if (req.session.loggedIn) {
+  // res.redirect("/");
+  //   return;
+  // }
+  res.render("signup");
 });
 
 module.exports = router;

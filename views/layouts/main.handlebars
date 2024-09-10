@@ -1,14 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Triptell</title>
-    <link rel="stylesheet" type="text/css" href="/css/jass.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/landing.css" />
   </head>
 
-  <body class="background-image">
+  <body>
     <header>
       <nav>
         <div class="logo">
@@ -24,58 +23,12 @@
         </div>
       </nav>
     </header>
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>EXPLORE. DISCOVER. CONNECT.</h1>
-        <p>This is a travel blog to discover beautiful destinations, new experiences, and hidden places around the world.</p>
-        <button>SIGN UP HERE</button>
-      </div>  
-    </section>
-
-    <section class="content">
-      <h2>Featured Destinations</h2>
-      <p class="subtitle">Popular travel blog posts & guides</p>
-      <div class="destination-grid">
-      <div class="destination-item">
-        <img src="/images/newyork.jpeg" alt="New York">
-        <p>Must visit cities in North America</p>
-        </div>
-        <div class="destination-item">
-        <img src="/images/ITALY.avif" alt="Italy">
-        <p>Discover the best of Italy</p>
-        </div>
-        <div class="destination-item">        
-        <img src="/images/iceland.jpg" alt="Iceland">
-        <p>Best times to view the northern lights</p>
-        </div>
-        <div class="destination-item">        
-        <img src="/images/egypt.jpg" alt="Egypt">
-        <p>Ancient Egyptian wonders of the world</p>
-        </div>
-        <div class="destination-item">        
-        <img src="/images/japan.avif" alt="Japan">
-        <p>Experience the culture of Japan</p>
-        </div>
-        <div class="destination-item">        
-        <img src="/images/bahamas.jpg" alt="Bahamas">
-        <p>Top 10 things to do in the Bahamas</p>
-        </div>
-        <div class="destination-item">        
-        <img src="/images/THAILAND.webp" alt="Thailand">
-        <p>Explore the ancient beauty of Thailand</p>
-        </div>
-        <div class="destination-item">        
-        <img src="/images/FRANCE.jpg" alt="Paris">
-        <p>Top 5 things to do in Paris</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 TripTell. All rights reserved.</p>
-  </footer>
-</body>
+    {{{body}}}
+    <footer>
+      <p>&copy; 2024 TripTell. All rights reserved.</p>
+    </footer>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 </html>
-

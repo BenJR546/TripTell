@@ -1,65 +1,86 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - TripTell</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-  <header class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">TripTell</a>
-    <ul class="navbar-nav ml-auto">
-    {{#if loggedIn}}
-      <li class="nav-item">
-        <a class="btn btn-primary" href="/logout">Logout</a>
-      </li>
-    {{else}}
-      <li class="nav-item">
-        <a class="btn btn-primary" href="/login">Login</a>
-      </li>
-    {{/if}}
-    </ul>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - TripTell</title>
+    <link rel="stylesheet" href="/css/blog.css" />
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">TripTell</a>
+      <ul class="navbar-nav ml-auto">
+        {{#if loggedIn}}
+          <li class="nav-item">
+            <a class="btn btn-primary" href="/">Logout</a>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a class="btn btn-primary" href="/login">Login</a>
+          </li>
+        {{/if}}
+      </ul>
+    </header>
 
-  <div class="container mt-5">
-    <h2 class="text-center">Travel Blogs</h2>
+    <div class="container mt-5">
+      <h2 class="text-center">Travel Blogs</h2>
 
-    <!-- Display existing blogs -->
-  {{#each blogs}}
-  <div class="card mb-3">
-    <img src="{{this.image_url}}" class="card-img-top" alt="{{this.title}}">
-    <div class="card-body">
-      <h5 class="card-title">{{this.title}}</h5>
-      <p class="card-text">{{this.content}}</p>
-      <p class="card-text"><small class="text-muted">By {{this.user.username}}</small></p>
+      <!-- Display existing blogs -->
+      {{#each blogs}}
+        <div class="card mb-3">
+          <img
+            src="{{this.image_url}}"
+            class="card-img-top"
+            alt="{{this.title}}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.content}}</p>
+            <p class="card-text"><small class="text-muted">By
+                {{this.user.username}}</small></p>
+          </div>
+        </div>
+      {{/each}}
+
+      <!-- Form to add new blog post -->
+      {{#if loggedIn}}
+        <h3>Add a New Blog Post</h3>
+        <form id="new-blog-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="content">Content</label>
+            <textarea
+              id="content"
+              name="content"
+              class="form-control"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="image_url">Image URL</label>
+            <input
+              type="text"
+              id="image_url"
+              name="image_url"
+              class="form-control"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Add Blog Post</button>
+        </form>
+      {{else}}
+        <p>You must be logged in to add a new blog post.</p>
+      {{/if}}
     </div>
-  </div>
-{{/each}}
 
-    <!-- Form to add new blog post -->
-    {{#if loggedIn}}
-      <h3>Add a New Blog Post</h3>
-      <form id="new-blog-form">
-        <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title" class="form-control" required>
-        </div>
-        <div class="form-group">
-          <label for="content">Content</label>
-          <textarea id="content" name="content" class="form-control" rows="5" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="image_url">Image URL</label>
-          <input type="text" id="image_url" name="image_url" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Add Blog Post</button>
-      </form>
-    {{else}}
-      <p>You must be logged in to add a new blog post.</p>
-    {{/if}}
-  </div>
-
-</body>
-<script src="/public/js/script.js"></script>
+  </body>
+  <script src="/public/js/script.js"></script>
 </html>

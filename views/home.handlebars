@@ -1,38 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - TripTell</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-  <header class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">TripTell</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto">
-       <!-- Example logout button in header -->
-
-
-      </ul>
+<main class="background-image">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>EXPLORE. DISCOVER. CONNECT.</h1>
+      <p>This is a travel blog to discover beautiful destinations, new
+        experiences, and hidden places around the world.</p>
+      {{#if loggedIn}}
+        <a href="/blog">View Blogs</a>
+      {{else}}
+        <a href="/login">SIGN UP HERE</a>
+      {{/if}}
     </div>
-  </header>
+  </section>
 
-  <div class="container mt-5">
-    <h1 class="text-center">Welcome to TripTell</h1>
-    <p class="text-center">Share your travel experiences with others.</p>
-
-    <div class="text-center mt-4">
-      <div class="btn-group" role="group">
-        <a class="btn btn-primary" href="/signup"> sign in</a>
-        <a class="btn btn-secondary" href="/login">sign up</a>
+  <section class="content">
+    <h2>Featured Destinations</h2>
+    <p class="subtitle">Popular travel blog posts & guides</p>
+    <div class="destination-grid">
+      <div class="destination-item">
+        <img src="/images/newyork.jpeg" alt="New York" />
+        <p>Must visit cities in North America</p>
+      </div>
+      <div class="destination-item">
+        <img src="/images/ITALY.avif" alt="Italy" />
+        <p>Discover the best of Italy</p>
+      </div>
+      <div class="destination-item">
+        <img src="/images/iceland.jpg" alt="Iceland" />
+        <p>Best times to view the northern lights</p>
+      </div>
+      <div class="destination-item">
+        <img src="/images/egypt.jpg" alt="Egypt" />
+        <p>Ancient Egyptian wonders of the world</p>
+      </div>
+      <div class="destination-item">
+        <img src="/images/japan.avif" alt="Japan" />
+        <p>Experience the culture of Japan</p>
+      </div>
+      <div class="destination-item">
+        <img src="/images/bahamas.jpg" alt="Bahamas" />
+        <p>Top 10 things to do in the Bahamas</p>
+      </div>
+      <div class="destination-item">
+        <img src="/images/THAILAND.webp" alt="Thailand" />
+        <p>Explore the ancient beauty of Thailand</p>
+      </div>
+      <div class="destination-item">
+        <img src="/images/FRANCE.jpg" alt="Paris" />
+        <p>Top 5 things to do in Paris</p>
       </div>
     </div>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+  </section>
+</main>
