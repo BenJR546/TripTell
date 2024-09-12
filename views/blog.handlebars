@@ -12,7 +12,11 @@
     {{#each blogs}}
       <div class="blog-card">
         {{#if this.image_url}}
-          <img src="{{this.image_url}}" class="blog-img" alt="{{this.title}}" />
+          <img
+            src="../public/images/iceland.jpg"
+            class="blog-img"
+            alt="{{this.title}}"
+          />
         {{/if}}
         <div class="blog-content">
           <h3 class="blog-title">{{this.title}}</h3>
@@ -42,7 +46,7 @@
         </div>
         <div class="form-group">
           <label for="image">Image</label>
-          <input type="file" id="image" name="image" accept="image/*"/>
+          <input type="file" id="image" name="image" accept="image/*" />
         </div>
         <button type="submit" class="btn btn-primary">Add Blog Post</button>
       </form>

@@ -18,10 +18,13 @@ const upload = multer({ storage: storage });
 
 router.get("/", async (req, res) => {
   try {
+    console.log("Getting all blogs ======================");
     const blogData = await Blog.findAll({
       include: [{ model: User }],
       order: [["createdAt", "DESC"]], // Order by most recent first
     });
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+    console.log("blogs", blogs);
 
     res.render("blog", {
       blogs: blogData.map((blog) => blog.get({ plain: true })),

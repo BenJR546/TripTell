@@ -1,24 +1,24 @@
- <main class="background-image">
-    {{!-- signup card --}}
-     <div class="login-card">
+<main class="background-image">
+  {{! signup card }}
+  <div class="login-card">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm p-4">
           <h2 class="text-center mb-4">Signup</h2>
-          <form id="loginForm"  action="/api/users/signup" method="POST">
-         <div class="mb-3">
+          <form id="loginForm" action="/api/users/signup" method="POST">
+            <div class="mb-3">
               <label for="username-signup" class="form-label">Username:</label>
               <input
-              class="form-control"
-              type="text"
-              id="username-signup"
-              name="username"
-              required
-            />
-          </div>
-            
+                class="form-control"
+                type="text"
+                id="username-signup"
+                name="username"
+                required
+              />
+            </div>
+
             <!-- Email Input -->
-            <div class="  mb-3">
+            <div class="mb-3">
               <label for="email-signup" class="form-label">Email:</label>
               <input
                 type="text"
@@ -30,7 +30,7 @@
             </div>
 
             <!-- Password Input -->
-            <div class=" mb-3">
+            <div class="mb-3">
               <label for="password-login" class="form-label">Password:</label>
               <input
                 type="password"
@@ -50,10 +50,10 @@
       </div>
     </div>
   </div>
-  </main>
-   <footer class="footer">
+</main>
+{{! <footer class="footer">
       <p>&copy; 2024 TripTell. All rights reserved.</p>
     </footer>
-    
- 
-    <script src="/js/login.js"></script>
+     }}
+
+<script src="/js/login.js"></script>
