@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .landing-page {
+    background-image: url('public/css/images/wallpaper.jpg');
+    background-size: cover;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  
+  }
+  #footer{
+    position:fixed
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes the full viewport height */
+}
+/* html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+} */
+main {
+  flex: 1; /* This makes the main content take up the remaining space */
+}
