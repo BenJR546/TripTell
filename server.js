@@ -48,6 +48,9 @@ app.use((err, req, res, next) => {
   });
 });
 
+// Static file serer for /public/uploads
+app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
     console.log(

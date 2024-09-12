@@ -11,7 +11,9 @@
   <div class="blog-grid">
     {{#each blogs}}
       <div class="blog-card">
-        <img src="{{this.image_url}}" class="blog-img" alt="{{this.title}}" />
+        {{#if this.image_url}}
+          <img src="{{this.image_url}}" class="blog-img" alt="{{this.title}}" />
+        {{/if}}
         <div class="blog-content">
           <h3 class="blog-title">{{this.title}}</h3>
           <p class="blog-text">{{this.content}}</p>
@@ -27,7 +29,7 @@
 {{#if loggedIn}}
   <div id="blog-modal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span class="close">×</span>
       <h3>Add a New Blog Post</h3>
       <form id="new-blog-form" enctype="multipart/form-data">
         <div class="form-group">
@@ -40,7 +42,7 @@
         </div>
         <div class="form-group">
           <label for="image">Image</label>
-          <input type="file" id="image" name="image" accept="image/*" />
+          <input type="file" id="image" name="image" accept="image/*"/>
         </div>
         <button type="submit" class="btn btn-primary">Add Blog Post</button>
       </form>
