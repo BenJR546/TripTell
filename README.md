@@ -45,6 +45,6 @@ Visit the deployed application at [deployed-url] and start sharing your travel e
 - Benjamin Rice (Github: BenJR546)
 - Jovana Vukovic (Github: Jovana667)
 - Sanjeev Thapa  (Github: )
-- Tinaika Pereira  (Github: )
+- Tinaika Pereira  (Github: Tinaika19 )
 
 ## Deployed Application
