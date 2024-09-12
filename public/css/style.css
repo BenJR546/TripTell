@@ -23,6 +23,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   background-color: var(--light);
 }
 
@@ -230,12 +231,22 @@ main {
   justify-content: space-between;
   gap: 20px;
 }
-
-footer {
-  background-color: #333;
+/* changs for footer */
+.home{
+   background-color: #333;
   color: white;
   text-align: center;
   padding: 1rem;
+  width:100%;
+
+}
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  position:fixed;
+  padding: 10px;
+  bottom:0;
   width: 100%;
 }
 
@@ -283,14 +294,15 @@ footer {
 
 .login-card {
   margin: 0 0 20px 0;
+  margin-top: 50px;
   flex: 0 0 50%;
   max-width: 100%;
   padding: 5px;
-  border: 3px solid var(--dark);
+  /* border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-  border-style: double;
+  border-style: double; */
   border-width: thick;
-  background-color: #577a7c;
+  /* background-color: #577a7c; */
   color: var(--light);
 }
 

@@ -34,6 +34,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      alert("your account has been created")
       document.location.replace("/blog");
     } else {
       alert("Failed to sign up.");
