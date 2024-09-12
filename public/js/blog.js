@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     try {
       console.log("Sending fetch request");
       // Update the fetch URL to match your server route
-      const response = await fetch("/api/blogs", {
+      const response = await fetch("/api/blog", {
         method: "POST",
         body: formData,
       });
