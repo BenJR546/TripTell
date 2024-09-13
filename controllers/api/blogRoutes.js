@@ -88,4 +88,44 @@ router.post("/", withAuth, upload.single("image"), async (req, res) => {
   }
 });
 
+router.post("/like", withAuth, async (req, res) => {
+  try {
+    const { blog_id } = req.body;
+    console.log("Liking blog:", blog_id);
+
+    const blog = await Blog.findByPk(blog_id);
+    if (!blog) {
+      return res.status(404).json({ message: "Blog not found" });
+    }
+
+    blog.likes += 1;
+    await blog.save();
+
+    return res.status(200).json(blog);
+  } catch (err) {
+    console.error("Server Error:", err);
+    return res.status(500).json({ message: "Failed to like blog post" });
+  }
+});
+
+router.post("/dislike", withAuth, async (req, res) => {
+  try {
+    const { blog_id } = req.body;
+    console.log("Disliking blog:", blog_id);
+
+    const blog = await Blog.findByPk(blog_id);
+    if (!blog) {
+      return res.status(404).json({ message: "Blog not found" });
+    }
+
+    blog.dislikes += 1;
+    await blog.save();
+
+    return res.status(200).json(blog);
+  } catch (err) {
+    console.error("Server Error:", err);
+    return res.status(500).json({ message: "Failed to dislike blog post" });
+  }
+});
+
 module.exports = router;

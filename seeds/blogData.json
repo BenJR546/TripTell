@@ -2,31 +2,51 @@
   {
     "title": "Discovering Dubrovnik",
     "content": "Explored Dubrovnik's stunning Old Town, walking the ancient city walls and taking a Game of Thrones tour. Enjoyed a kayaking excursion around Lokrum Island and relaxed on Banje Beach. Highly recommended for solo travelers due to its safety and beauty. Families will enjoy the cable car ride to Mount Srđ for panoramic views. The city can be crowded in summer, so spring or fall visits are ideal for a more relaxed experience. Best time to visit: May to June or September to October for pleasant weather and fewer crowds.",
-    "image_url": "/public/images/Dubrovniktravel.avif",
-    "user_id": 1
+    "image_url": "Dubrovtravel.avif",
+    "user_id": 1,
+    "createdAt": "2024-09-01T00:00:00.000Z",
+    "updatedAt": "2024-09-01T00:00:00.000Z",
+    "likes": 16,
+    "dislikes": 2
   },
   {
     "title": "Tokyo's Tradition and Modern culture",
     "content": "Immersed in Tokyo's unique culture, visiting ancient temples like Senso-ji and experiencing the futuristic Robot Restaurant show. Explored the vibrant Shibuya and Harajuku districts for shopping and people-watching. Great for solo travelers due to its safety and efficient public transport. Families will love DisneySea and the Ghibli Museum. The city can be overwhelming, so seniors might prefer guided tours. Best time to visit: Late March to early April for cherry blossoms, or October to November for comfortable temperatures and autumn colors.",
-    "image_url": "/public/images/japan2.jpg",
-    "user_id": 2
+    "image_url": "japan.avif",
+    "user_id": 2,
+    "createdAt": "2024-09-02T00:00:00.000Z",
+    "updatedAt": "2024-09-02T00:00:00.000Z",
+    "likes": 19,
+    "dislikes": 6
   },
   {
     "title": "New York City Adventure",
     "content": "Explored iconic landmarks like the Statue of Liberty and Empire State Building, enjoyed a Broadway show, and strolled through Central Park. Sampled diverse cuisines in different neighborhoods and visited world-class museums. Excellent for solo travelers with endless entertainment options. Families will enjoy attractions like the American Museum of Natural History and Central Park Zoo. The city's fast pace might be challenging for some seniors, but there are plenty of accessible options. Best time to visit: April to June or September to November for mild weather, or December for festive holiday atmosphere.",
-    "image_url": "/public/images/NYCtravel.jpeg",
-    "user_id": 3
+    "image_url": "NYCtravel.jpeg",
+    "user_id": 3,
+    "createdAt": "2024-09-03T00:00:00.000Z",
+    "updatedAt": "2024-09-03T00:00:00.000Z",
+    "likes": 4,
+    "dislikes": 0
   },
   {
     "title": "Bali Bliss",
     "content": "Experienced Bali's spiritual side with visits to ancient temples and participated in a traditional cooking class. Relaxed on beautiful beaches, tried surfing in Kuta, and explored the scenic rice terraces of Ubud. Great for solo travelers seeking relaxation or adventure. Families will enjoy the family-friendly resorts and water parks. Some areas can be quite touristy, so venture off the beaten path for a more authentic experience. Best time to visit: April to October for dry season, with May, June and September offering lower prices and fewer crowds.",
-    "image_url": "/public/images/BALItravel.webp",
-    "user_id": 4
+    "image_url": "BALItravel.webp",
+    "user_id": 4,
+    "createdAt": "2024-09-04T00:00:00.000Z",
+    "updatedAt": "2024-09-04T00:00:00.000Z",
+    "likes": 7,
+    "dislikes": 1
   },
   {
     "title": "Iceland lights and landscapes",
     "content": "Witnessed the mesmerizing Northern Lights, relaxed in the Blue Lagoon geothermal spa, and explored otherworldly landscapes including glaciers and volcanoes. Took a road trip along the Ring Road, visiting stunning waterfalls and black sand beaches. Ideal for adventure seekers and nature lovers. Family-friendly with many outdoor activities, but can be expensive. Seniors should be prepared for some rugged terrain. Best time to visit: June to August for midnight sun and milder weather, or September to March for Northern Lights viewing.",
-    "image_url": "/public/images/icelandtravel.jpg",
-    "user_id": 5
+    "image_url": "icelandtravel.jpg",
+    "user_id": 5,
+    "createdAt": "2024-09-05T00:00:00.000Z",
+    "updatedAt": "2024-09-05T00:00:00.000Z",
+    "likes": 32,
+    "dislikes": 6
   }
 ]
