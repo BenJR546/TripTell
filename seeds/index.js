@@ -1,8 +1,8 @@
-const sequelize = require('../config/connection');
-const { User, Blog } = require('../models');
+const sequelize = require("../config/connection");
+const { User, Blog } = require("../models");
 
-const userData = require('./userData.json');
-const blogData = require('./BlogData.json');
+const userData = require("./userData.json");
+const blogData = require("./blogData.json");
 
 const seedDatabase = async () => {
   try {
@@ -19,10 +19,10 @@ const seedDatabase = async () => {
       returning: true,
     });
 
-    console.log('Database seeded successfully!');
+    console.log("Database seeded successfully!");
     process.exit(0);
   } catch (err) {
-    console.error('Failed to seed database:', err);
+    console.error("Failed to seed database:", err);
     process.exit(1);
   }
 };

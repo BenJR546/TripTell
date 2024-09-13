@@ -102,3 +102,36 @@ document.addEventListener("DOMContentLoaded", (event) => {
     );
   }
 });
+
+let likeButtons = document.querySelectorAll(".likeBtn");
+let dislikeButtons = document.querySelectorAll(".dislikeBtn");
+for (let i = 0; i < likeButtons.length; i++) {
+  likeButtons[i].addEventListener("click", function () {
+    let blog_id = this.getAttribute("data-blog-id");
+    const response = fetch("/api/blog/like", {
+      method: "POST",
+      body: JSON.stringify({ blog_id }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    // if (response.ok) {
+    window.location.reload();
+    // }
+  });
+}
+for (let i = 0; i < dislikeButtons.length; i++) {
+  dislikeButtons[i].addEventListener("click", function () {
+    let blog_id = this.getAttribute("data-blog-id");
+    const response = fetch("/api/blog/dislike", {
+      method: "POST",
+      body: JSON.stringify({ blog_id }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      window.location.reload();
+    }
+  });
+}

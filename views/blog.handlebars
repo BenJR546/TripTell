@@ -12,12 +12,30 @@
     {{#each blogs}}
       <div class="blog-card">
         {{#if this.image_url}}
-          <img src="{{this.image_url}}" class="blog-img" alt="{{this.title}}" />
+          <img
+            src="/images/{{this.image_url}}"
+            class="blog-img"
+            alt="{{this.title}}"
+          />
         {{/if}}
         <div class="blog-content">
           <h3 class="blog-title">{{this.title}}</h3>
           <p class="blog-text">{{this.content}}</p>
-          <p class="blog-author">By {{this.user.username}}</p>
+          <div class="d-flex justify-content-between">
+            <p class="blog-author">By {{this.user.username}}</p>
+            <div class="row">
+              <p class="blog-date col"><i
+                  class="fa-solid fa-thumbs-up likeBtn"
+                  data-blog-id="{{this.id}}"
+                ></i>
+                {{this.likes}}</p>
+              <p class="blog-date col"><i
+                  class="fa-solid fa-thumbs-down dislikeBtn"
+                  data-blog-id="{{this.id}}"
+                ></i>
+                {{this.dislikes}}</p>
+            </div>
+          </div>
         </div>
       </div>
     {{else}}
@@ -42,12 +60,15 @@
         </div>
         <div class="form-group">
           <label for="image">Image</label>
-          <input type="file" id="image" name="image" accept="image/*"/>
+          <input type="file" id="image" name="image" accept="image/*" />
         </div>
         <button type="submit" class="btn btn-primary">Add Blog Post</button>
       </form>
     </div>
   </div>
 {{/if}}
-
+<script
+  src="https://kit.fontawesome.com/58dc05fcca.js"
+  crossorigin="anonymous"
+></script>
 <script src="/js/blog.js"></script>
