@@ -61,3 +61,7 @@ Visit the deployed application [here](https://project2-s4bs.onrender.com/) and s
 ## Deployed Application
 
 Deployed on Render: https://project2-s4bs.onrender.com/
+
+## GitHub Repository
+
+You can find the repository here: https://github.com/BenJR546/TripTell
