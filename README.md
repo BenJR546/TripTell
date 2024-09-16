@@ -59,3 +59,5 @@ Visit the deployed application [here](https://project2-s4bs.onrender.com/) and s
 - Tinaika Pereira (Github: Tinaika19 )
 
 ## Deployed Application
+
+Deployed on Render: https://project2-s4bs.onrender.com/
