@@ -39,6 +39,9 @@ Visit the deployed application at [deployed-url] and start sharing your travel e
 - Inclusion of additional APIs (Weather forecast of locations upon search)
 
 ## Screenshots
+![Screenshot 2024-09-16 153425](https://github.com/user-attachments/assets/a518117a-7cba-4be4-9cd3-58436f393fb6)
+![Screenshot 2024-09-16 153435](https://github.com/user-attachments/assets/656ca271-83c8-41b6-b2fc-738f4dfbf1ba)
+![Screenshot 2024-09-16 153445](https://github.com/user-attachments/assets/6162553e-0f5e-4c34-abb8-df0e459a90fd)
 
 
 ## Main contributors & contacts 
