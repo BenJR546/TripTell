@@ -12,11 +12,7 @@
     {{#each blogs}}
       <div class="blog-card">
         {{#if this.image_url}}
-          <img
-            src="/images/{{this.image_url}}"
-            class="blog-img"
-            alt="{{this.title}}"
-          />
+          <img src="{{this.image_url}}" class="blog-img" alt="{{this.title}}" />
         {{/if}}
         <div class="blog-content">
           <h3 class="blog-title">{{this.title}}</h3>

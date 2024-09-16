@@ -37,6 +37,8 @@ app.set("view engine", "handlebars");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+// Static file serer for /public/uploads
+app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 
 app.use(routes);
 
@@ -47,9 +49,6 @@ app.use((err, req, res, next) => {
     error: process.env.NODE_ENV === "production" ? {} : err,
   });
 });
-
-// Static file serer for /public/uploads
-app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
